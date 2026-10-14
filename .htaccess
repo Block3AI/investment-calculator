@@ -1,0 +1,13 @@
+# Serve the calculator directly from the website document root.
+DirectoryIndex index.html
+Options -Indexes
+
+# Keep development files out of HTTP responses.
+<FilesMatch "(^\.|\.(md|cjs)$)">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+# Allow the standard certificate-validation directory.
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+RewriteRule ^tests(?:/|$) - [F,L]

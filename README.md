@@ -2,6 +2,8 @@
 
 A simple investment calculator built with HTML, CSS, and vanilla JavaScript. Enter an initial investment, monthly contribution, duration, and annual return to estimate future value, total contributions, and growth or loss.
 
+Website: [investmentcalculator.block3ai.com](https://investmentcalculator.block3ai.com)
+
 ## Getting started
 
 Open `index.html` in your browser. No installation or build step is required. All calculations run locally in your browser.
