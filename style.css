@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  --bg: #070b12;
+  --bg: #000000;
   --panel: #0e1624;
   --text: #f4f7fb;
   --muted: #9fb0c4;
@@ -14,12 +14,11 @@
   background: var(--bg);
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: radial-gradient(circle at 75% 5%, #60a5fa1a, transparent 26rem), radial-gradient(circle at 15% 20%, #5eead40f, transparent 24rem); }
-body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .14; background-image: linear-gradient(#ffffff06 1px, transparent 1px), linear-gradient(90deg, #ffffff06 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, #000, transparent 80%); }
+body { margin: 0; background: var(--bg); }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--cyan); }
 .container { width: min(calc(100% - 40px), 1180px); margin-inline: auto; }
-.nav-wrap { border-bottom: 1px solid #ffffff0f; background: #070b12c7; }
+.nav-wrap { border-bottom: 1px solid #ffffff0f; background: var(--bg); }
 nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.22rem; font-weight: 850; letter-spacing: -.04em; }
 .brand-mark { width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(135deg, var(--cyan), var(--blue)); box-shadow: 0 0 22px #5eead48c; }
