@@ -11,11 +11,11 @@
 - [x] Automated calculation and validation tests.
 - [x] Projection disclaimer and standalone contributor/deployment documentation.
 
-## Release work requiring separate approval
+## Repository and release work
 
 - [x] Prepare independent project with a fresh baseline and original-source attribution.
-- [ ] Create GitHub repository and verify publication.
-- [ ] Push reviewed source to Block3AI/investment-calculator.
+- [x] Create private GitHub repository at Block3AI/investment-calculator.
+- [x] Push reviewed source to Block3AI/investment-calculator.
 - [ ] Select host, deploy, and configure calculator.block3ai.com.
 - [ ] Verify live HTTPS, asset delivery, and calculator workflow.
 
