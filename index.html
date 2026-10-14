@@ -6,18 +6,29 @@
   <meta name="description" content="Estimate investment growth with monthly contributions and monthly compounding. A free, simple Block3AI calculator.">
   <link rel="canonical" href="https://investmentcalculator.block3ai.com/">
   <title>Investment Calculator | Block3AI</title>
+  <meta name="theme-color" content="#070b12">
   <link rel="stylesheet" href="style.css">
   <script src="calculation.js" defer></script>
   <script src="index.js" defer></script>
 </head>
 <body>
-  <main class="calculator">
-    <header>
-      <p class="brand">BLOCK3AI · SIMPLE FINANCIAL TOOLS</p>
-      <h1>Investment Calculator</h1>
+  <a class="skip-link" href="#calculator-form">Skip to calculator</a>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="https://block3ai.com/"><span class="brand-mark" aria-hidden="true"></span>Block3AI</a>
+      <a class="nav-cta" href="https://block3ai.com/projects">Explore projects <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+  <main class="calculator container">
+    <header class="page-hero">
+      <p class="eyebrow">Simple financial tools</p>
+      <h1>Investment <span class="gradient">Calculator.</span></h1>
       <p>Explore how an initial investment and regular contributions could grow over time.</p>
     </header>
-    <form id="calculator-form" novalidate>
+    <div class="calculator-layout">
+    <div class="calculator-workspace">
+    <form id="calculator-form" class="panel" novalidate aria-labelledby="form-heading">
+      <div class="panel-heading"><h2 id="form-heading">Build your projection</h2><span class="tag">USD · Monthly compounding</span></div>
       <div class="fields">
         <div class="field">
           <label for="principal">Initial investment (USD)</label>
@@ -56,13 +67,16 @@
         <div><dt>Estimated growth / loss</dt><dd id="growth"></dd></div>
       </dl>
     </section>
-    <aside aria-labelledby="assumptions-heading">
+    </div>
+    <aside class="panel" aria-labelledby="assumptions-heading">
+      <p class="eyebrow">The details</p>
       <h2 id="assumptions-heading">How this estimate works</h2>
       <p>Returns compound monthly at your annual rate divided by 12. Contributions arrive at the end of each month. The rate and contribution stay constant throughout the projection. Total contributions include your initial investment.</p>
       <p>A negative rate models a steady monthly decline. An annual input of −100% means −8.33% per month, not a complete loss in one year.</p>
       <p class="disclaimer">Projections are illustrative estimates, not guarantees or financial advice. Actual returns vary. Taxes, fees, and inflation are not included.</p>
     </aside>
-    <footer>Built by Block3AI · Amounts shown in US dollars (USD)</footer>
+    </div>
+    <footer><a href="https://block3ai.com/">Built by Block3AI</a><span>Amounts shown in US dollars (USD)</span></footer>
     <noscript><p class="error">Enable JavaScript to use this calculator.</p></noscript>
   </main>
 </body>
