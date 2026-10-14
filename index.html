@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimate investment growth with monthly contributions and monthly compounding. A free, simple Block3AI calculator.">
+  <title>Investment Calculator | Block3AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="calculation.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <main class="calculator">
+    <header>
+      <p class="brand">BLOCK3AI · SIMPLE FINANCIAL TOOLS</p>
+      <h1>Investment Calculator</h1>
+      <p>Explore how an initial investment and regular contributions could grow over time.</p>
+    </header>
+    <form id="calculator-form" novalidate>
+      <div class="fields">
+        <div class="field">
+          <label for="principal">Initial investment (USD)</label>
+          <input id="principal" name="principal" type="number" min="0" max="1000000000" step="0.01" inputmode="decimal" placeholder="e.g. 1,000" required aria-describedby="principal-hint principal-error">
+          <small id="principal-hint">$0–$1 billion. Include cents if needed.</small>
+          <p class="error" id="principal-error"></p>
+        </div>
+        <div class="field">
+          <label for="monthly">Monthly contribution (USD)</label>
+          <input id="monthly" name="monthly" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" placeholder="e.g. 100" required aria-describedby="monthly-hint monthly-error">
+          <small id="monthly-hint">$0–$1 million, deposited at each month’s end.</small>
+          <p class="error" id="monthly-error"></p>
+        </div>
+        <div class="field">
+          <label for="years">Years to grow</label>
+          <input id="years" name="years" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="e.g. 10" required aria-describedby="years-hint years-error">
+          <small id="years-hint">A whole number from 0 to 100.</small>
+          <p class="error" id="years-error"></p>
+        </div>
+        <div class="field">
+          <label for="rate">Annual return (%)</label>
+          <input id="rate" name="rate" type="number" min="-100" max="100" step="0.01" value="5" required aria-describedby="rate-hint rate-error">
+          <small id="rate-hint">−100% to 100%. Nominal rate; divided by 12 monthly.</small>
+          <p class="error" id="rate-error"></p>
+        </div>
+      </div>
+      <div class="actions"><button type="submit">Calculate projection</button><button type="reset" class="secondary">Reset</button></div>
+      <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </form>
+    <section id="results" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading">Your estimated results</h2>
+      <p id="result-context"></p>
+      <dl class="result-grid">
+        <div class="primary-result"><dt>Estimated future value</dt><dd id="future-value"></dd></div>
+        <div><dt>Total contributions</dt><dd id="contributions"></dd></div>
+        <div><dt>Estimated growth / loss</dt><dd id="growth"></dd></div>
+      </dl>
+    </section>
+    <aside aria-labelledby="assumptions-heading">
+      <h2 id="assumptions-heading">How this estimate works</h2>
+      <p>Returns compound monthly at your annual rate divided by 12. Contributions arrive at the end of each month. The rate and contribution stay constant throughout the projection. Total contributions include your initial investment.</p>
+      <p>A negative rate models a steady monthly decline. An annual input of −100% means −8.33% per month, not a complete loss in one year.</p>
+      <p class="disclaimer">Projections are illustrative estimates, not guarantees or financial advice. Actual returns vary. Taxes, fees, and inflation are not included.</p>
+    </aside>
+    <footer>Built by Block3AI · Amounts shown in US dollars (USD)</footer>
+    <noscript><p class="error">Enable JavaScript to use this calculator.</p></noscript>
+  </main>
+</body>
+</html>
